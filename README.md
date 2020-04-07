@@ -1,8 +1,8 @@
 # MetaboMAPS
 
-MetaboMAPS is a web project for manipulating metabolic pathways in SVG format. MetaboMAPS consists of two main parts: the *visualization tool*, where users can plot their own data set, and the *plot box editor*, where users can add or change the areas for visualization (plot boxes) and assign identifiers to them.
+[MetaboMAPS](https://metabomaps.brenda-enzymes.org) is a web project for manipulating metabolic pathways in SVG format. MetaboMAPS consists of two main parts: the *visualization tool*, where users can plot their own data set, and the *plot box editor*, where users can add or change the areas for visualization (plot boxes) and assign identifiers to them.
 
-This is a frontend-only version of MetaboMAPS. The backend deals with data and user management and is not necessary for this single pathway example.
+This is a frontend-only version of MetaboMAPS. The backend deals with data and user management and is not necessary for this single pathway example. You can see a demo of this simplified version [here](https://metabomaps.brenda-enzymes.org/github).
 
 ## Data visualization
 

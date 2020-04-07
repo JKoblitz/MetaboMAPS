@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>MetaboMAPS</title>
+</head>
+
+<body>
+    <div class="container ">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+            <a class="navbar-brand mr-4" href="index.html"><img src="img/Metabomaps_.png" alt="MetaboMAPS Logo"
+                    width="100px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="maps.html">Data Visualization</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="edit_pw.html">Plotbox Editor</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="editor" class="row">
+
+            <div id="maps-interface" class="col-4">
+                <h4>TCA cycle</h4>
+                <h6><em>Homo sapiens</em></h6>
+                <a href="maps.html" class="btn btn-primary" id="overview-svg">
+                    Go to pathway map</a>
+
+                <h4>Plot areas</h4>
+                <strong>Resize plot areas: </strong><br>
+                <button class="btn btn-primary m-1" title="enlarge plot boxes" id="box-size-plus"
+                    value="plus">&plus;</button>
+                <button class="btn btn-primary m-1" title="shrink plot boxes" id="box-size-minus"
+                    value="minus">&minus;</button>
+                <div id="multi-select" style="display:none">
+                    <hr>
+                    <h6>Align plot boxes</h6>
+                    <button class="btn btn-primary m-1" title="align left" id="align-left">&lArr;</button>
+                    <button class="btn btn-primary m-1" title="align right" id="align-right">&rArr;</button>
+                    <button class="btn btn-primary m-1" title="align top" id="align-top">&uArr;</button>
+                    <button class="btn btn-primary m-1" title="align bottom" id="align-bottom">&dArr;</button>
+                </div>
+                <div id="identifier-form" class="mt-2" style="display:none;">
+                    <h5>Identifiers:</h5>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="plotType" id="plotType_trans" value="trans">
+                        <label class="form-check-label" for="plotType_trans">Reactions</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="plotType" id="plotType_met" value="met">
+                        <label class="form-check-label" for="plotType_met">Metabolites</label>
+                    </div><br>
+                    <input type="text" name="identifiers" id="identifiers" placeholder="add identifier">
+                    <small class="text-muted">
+                        Add new identifier by typing. Then press:
+                        <ul>
+                            <li><strong>Enter or select from suggetions:</strong> add current identifier. If found in
+                                the database, it will be linked to
+                                certain synonyms and other databases. Found identifiers are shown in <span
+                                    style="background-color: #d8d8d8;">grey</span> and considered
+                                organism-independant. Identifiers that are not found in the database are shown in <span
+                                    class="bg-warning ">orange</span> and considered as
+                                organism-dependant.</li>
+                            <li><strong>Ctrl + Enter:</strong> prevent database connection. Useful if your
+                                identifier is not the same as in the database. Identifiers are shown in <span
+                                    class="bg-warning ">orange</span> and considered as
+                                organism-dependant.</li>
+                            <li><strong>Alt + Enter:</strong> mark identifier as <em>putative</em>. Useful to highlight
+                                identifiers that must be treated with caution. Identifiers are marked with <span
+                                    class="putative"></span>.
+                            </li>
+                        </ul>
+                        <p><strong>Note:</strong> This demo contains a very limited number of synonyms due to the
+                            missing database
+                            connection.</p>
+                    </small><br>
+
+                </div>
+            </div>
+            <div class="col-8">
+                <object id="maps-svg" focusable="true" class="svgObject border" data="data/TCA.svg"
+                    type="image/svg+xml">
+                    <!-- Für Browser ohne SVG-Unterstützung -->
+                    Your browser doesn't support SVG or the requested SVG (ID = 61) could not be found.
+                </object>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+
+    <script src="js/d3.v5.min.js"></script>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/tageditor.js"></script>
+    <script src="js/suggestions.js"></script>
+
+    <script>
+        $(window).on("load", function () {
+            $(window).resize(function () {
+                if ($(window).width() > 996) {
+                    $("#screen-size-alert").hide()
+                    var h = $(window).height() - $("nav")[0].clientHeight - 50 - 54
+                    $("#maps-svg").height(h)
+                } else {
+                    $("#screen-size-alert").show()
+                    $("#maps-svg").height($(window).height() * .7)
+                }
+            }).resize()
+        })
+
+        var amsifyIdentifier = new AmsifySuggestags($('input[name="identifiers"]'));
+        amsifyIdentifier._settings({
+            selectOnHover: false,
+            noSuggestionMsg: 'This identifier was not found in our database.',
+            tagLimit: 20
+        })
+        amsifyIdentifier._init();
+    </script>
+
+    <script src="js/svg-editor.js"></script>
+
+
+</body>
+
+</html>

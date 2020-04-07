@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>MetaboMAPS</title>
+</head>
+
+<body>
+    <div class="container ">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+            <a class="navbar-brand mr-4" href="index.html"><img src="img/Metabomaps_.png" alt="MetaboMAPS Logo"
+                    width="100px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="maps.html">Data Visualization</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="edit_pw.html">Plotbox Editor</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="identifier-div">
+            <button id="identifier-btn" title="show all identifiers" type="button" class="text-primary">
+                <img src="img/identifier-icon.svg" alt="i" width="25px">
+            </button>
+
+            <h4>All identifiers:</h4>
+            <p id="identifier-count"></p>
+            <div id="identifier-list">
+                <table class="table table-sm" id="identifier-table"></table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="maps-interface" class="col-4">
+                <div id="maps-selection">
+                    <div class="card ">
+                        <div class="card-body">
+                            <h4 class="card-title"><em>Homo sapiens</em></h4>
+                            <h6>TCA cycle</h6>
+
+                            <a href="edit_pw.html" class="btn btn-outline-primary" id="edit-pathway-icon"
+                                title="edit current pathway">Edit Pathway</a>
+
+
+                            <h4 class="card-title mt-4">Visualize data</h4>
+                            <strong>Reactions</strong>
+
+                            <div class=mb-2>
+                                <label for="type_trans">Plot type:</label>
+                                <select class="custom-select" id="type_trans">
+                                    <option value="heat">Heatmap</option>
+                                    <option value="circle" selected>Circle indicator</option>
+                                    <option value="bar">Bar Chart</option>
+                                    <option value="logbar">Bar Chart (Log10)</option>
+                                    <option value="groupbar">Bar Chart (grouped)</option>
+                                    <option value="line">Line Chart</option>
+                                    <option value="pie">Pie Chart</option>
+                                </select>
+                                <small class="text-muted groupbar_explain_trans"><a
+                                        href="help.php#plots-grouping">grouping</a> via
+                                    header, e.g.
+                                    group_condition</small>
+                            </div>
+                            <div class=mb-2>
+                                <label for="color_trans">Color scheme:</label>
+                                <select class="custom-select" id="color_trans">
+                                    <option disabled>──── sequencial ────</option>
+                                    <option value="Blues">blue</option>
+                                    <option value="Reds">red</option>
+                                    <option value="Greens">green</option>
+                                    <option value="Greys">grey</option>
+                                    <option value="YlGnBu">yellow > green > blue</option>
+                                    <option value="YlOrRd">yellow > orange > red</option>
+                                    <option disabled>──── diverging ────</option>
+                                    <option value="RdBu" selected>red > blue</option>
+                                    <option value="RdGy">red > gray</option>
+                                    <option value="BrBG">brown > turquois</option>
+                                    <option value="PiYG">pink > green</option>
+                                    <option value="RdYlBu">red > yellow > blue</option>
+                                    <option disabled>──── radial ────</option>
+                                    <option value="Spectral">spectral</option>
+                                    <option value="Cool">cool</option>
+                                    <option value="Viridis">viridis</option>
+                                    <option value="Plasma">plasma</option>
+                                    <option value="Inferno">inferno</option>
+                                    <option value="Rainbow">rainbow</option>
+                                    <option disabled>──── categorical ────</option>
+                                    <option class="color_trans_cat" value="Category10">category (10)</option>
+                                    <option class="color_trans_cat" value="Paired">paired (12)</option>
+                                    <option class="color_trans_cat" value="Set3">pastel (12)</option>
+                                </select>
+                                <img id="color_show_trans" src="" width="100%" height="10px">
+                                <!-- <hr> -->
+                            </div>
+                            <div class=mb-2>
+                                <label for="min_trans">Range:</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" placeholder="min" id="min_trans">
+                                    <input type="number" class="form-control" placeholder="zero" id="zero_trans">
+                                    <input type="number" class="form-control" placeholder="max" id="max_trans">
+                                </div>
+                            </div>
+
+                            <hr>
+                            <strong>Metabolites</strong>
+                            <div class=mb-2>
+                                <label for="type_met">Plot type:</label>
+                                <select class="custom-select" id="type_met">
+                                    <option value="heat">Heatmap</option>
+                                    <option value="circle">Circle indicator</option>
+                                    <option value="bar" selected>Bar Chart</option>
+                                    <option value="logbar">Bar Chart (Log10)</option>
+                                    <option value="groupbar">Bar Chart (grouped)</option>
+                                    <option value="line">Line Chart</option>
+                                    <option value="pie">Pie Chart</option>
+                                </select>
+                                <small class="text-muted groupbar_explain_met"><a
+                                        href="help.php#plots-grouping">grouping</a> via
+                                    header, e.g.
+                                    group_condition</small>
+                            </div>
+                            <div class=mb-2>
+                                <label for="color_met">Color scheme:</label>
+                                <select class="custom-select" id="color_met">
+                                    <option disabled>──── sequencial ────</option>
+                                    <option value="Blues">blue</option>
+                                    <option value="Reds">red</option>
+                                    <option value="Greens">green</option>
+                                    <option value="Greys">grey</option>
+                                    <option value="YlGnBu">yellow > green > blue</option>
+                                    <option value="YlOrRd">yellow > orange > red</option>
+                                    <option disabled>──── diverging ────</option>
+                                    <option value="RdBu" selected>red > blue</option>
+                                    <option value="RdGy">red > gray</option>
+                                    <option value="BrBG">brown > turquois</option>
+                                    <option value="PiYG">pink > green</option>
+                                    <option value="RdYlBu">red > yellow > blue</option>
+                                    <option disabled>──── radial ────</option>
+                                    <option value="Spectral">spectral</option>
+                                    <option value="Cool">cool</option>
+                                    <option value="Viridis" selected>viridis</option>
+                                    <option value="Plasma">plasma</option>
+                                    <option value="Inferno">inferno</option>
+                                    <option value="Rainbow">rainbow</option>
+                                    <option disabled>──── categorical ────</option>
+                                    <option class="color_met_cat" value="Category10">category (10)</option>
+                                    <option class="color_met_cat" value="Paired">paired (12)</option>
+                                    <option class="color_met_cat" value="Set3">pastel (12)</option>
+                                </select>
+                                <img id="color_show_met" src="" width="100%" height="10px">
+                            </div>
+                            <div class=mb-2>
+                                <label for="min_met">Range:</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" placeholder="min" id="min_met">
+                                    <input type="number" class="form-control" placeholder="zero" id="zero_met">
+                                    <input type="number" class="form-control" placeholder="max" id="max_met">
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <button type="button" class="btn btn-outline-primary btn-block mt-2" id="plot"></i>
+                                Plot</button>
+                            <div>
+                                <button class="btn btn-outline-primary btn-block mt-2" id="resetMap">
+                                    Reset the map</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-2" id="legendCard" style="display:none;">
+                        <div class="card-body">
+                            <h4 class="card-title">Legends</h4>
+                            <div id="legendSVG">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="maps-svg" class="col-8">
+
+                <div id="svg-div">
+                    <object id="svgObject" class="svgObject border" data="data/TCA.svg" type="image/svg+xml">
+                    </object>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+
+    <script>
+        // define some global variables:
+        var pathway = {}
+        var svg, zoom, range
+        var identifierMode = false;
+        var identifiers = [],
+            id2plotbox = {}
+        var data = {
+            "trans": [],
+            "met": []
+        }
+        var width = 36.35,
+            height = 16.5
+    </script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/d3.v5.min.js"></script>
+    <script src="js/metabomaps.js"></script>
+    <script>
+        // interface bindings
+        $("#identifier-div > *:not(button)").hide()
+        d3.json("data/identifiers.json").then(function (data) {
+            identifiers = data;
+            Object.entries(data).forEach(function (d) {
+                var pb = d[0]
+                var ident = d[1].identifier
+                ident.forEach((d) => {
+                    if (d.value in id2plotbox) {
+                        id2plotbox[d.value].push(pb)
+                    } else {
+                        id2plotbox[d.value] = [pb];
+                    }
+                })
+            })
+        })
+
+        document.getElementById("svgObject").addEventListener('load', function () {
+            zoom = d3.zoom()
+                .scaleExtent([0.6, 6])
+                .on("zoom", function () {
+                    d3.select(this).select("g").attr("transform", d3.event.transform);
+                });
+            var svgDoc = this.contentDocument;
+            svg = d3.select(svgDoc).select("svg")
+            svg.append("style").attr("id", "plot-style")
+                .text(
+                    ".plot-boxes > g {display:none;} .plot-boxes > g:first-child {display:block;} .plot-box > text {font-family:Arial, sanserif;font-size:9px;dominant-baseline:central} .plot-boxes rect.temp {fill: white; filter: drop-shadow(0px 0px 4px rgba(139, 0, 0, 0.5));}"
+                )
+            svg.append("style").attr("id", "filter-style")
+                .text(
+                    ".plot-box {filter: drop-shadow(0px 0px 4px rgba(139, 0, 0, 0.5)); cursor: pointer;} .plot-box:only-child {filter:none; cursor: inherit} .plot-box.open {filter: none}"
+                )
+            svg.call(zoom)
+
+        })
+        $(window).resize(function () {
+            if ($(window).width() > 996) {
+                var h = $(window).height() - $("nav")[0].clientHeight - 95
+                $("#svgObject").height(h)
+                $("#maps-interface").height(h)
+                $("#identifier-div").height(h - 10)
+            } else {
+                $("#svgObject").height($(window).height() * .8)
+                $("#maps-interface").height("100%")
+            }
+        }).resize()
+
+        $(document).ready(function () {
+            openDataFiles("data/transcriptome.csv", "trans")
+            openDataFiles("data/metabolome.csv", "met")
+
+            $("#type_trans,#type_met").change(function () {
+                var type = this.id.split("_")[1];
+                $(".color_" + type + "_cat").attr("disabled", false)
+                $(".groupbar_explain_" + type).hide()
+                switch (this.value) {
+                    case "heat":
+                        $("#type_icon_" + type).html('<i class="fad fa-th"></i>')
+                        $(".color_" + type + "_cat").attr("disabled", true)
+                        if ($("#color_" + type).val() == null) {
+                            $("#color_" + type).val("RdBu").change()
+                        }
+                        break;
+                    case "groupbar":
+                        $(".groupbar_explain_" + type).show()
+                        break;
+                    case "circle":
+                        $(".color_" + type + "_cat").attr("disabled", true)
+                        if ($("#color_" + type).val() == null) {
+                            $("#color_" + type).val("RdBu").change()
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }).change()
+
+            $("#color_trans,#color_met").change(function () {
+                var type = this.id.split("_")[1];
+                $('#color_show_' + type).attr("src", "img/colors/" + this.value + ".png")
+            }).change()
+
+            $("#resetMap").on("click", resetMap)
+
+            // render table when identifier button is clicked
+            $("#identifier-btn").on("click", function () {
+                if (identifierMode) {
+                    // its already open: close it!
+                    $("#identifier-div > *:not(button)").hide()
+                    $("#identifier-count").html("")
+                    $("#identifier-table").html("")
+                    $("#identifier-div").css("width", "0")
+                    identifierMode = false
+                    svg.selectAll("g.plot-boxes rect.pb-temp").remove()
+                    svg.append("style").attr("id", "filter-style")
+                        .text(
+                            ".plot-box {filter: drop-shadow(0px 0px 4px rgba(139, 0, 0, 0.5)); cursor: pointer;} .plot-box:only-child {filter:none; cursor: inherit} .plot-box.open {filter: none}"
+                        )
+                    return
+                }
+                identifierMode = true
+                $("#identifier-div").css("width", "400px")
+                svg.select("style#filter-style").remove()
+                $("#identifier-div > *:not(button)").show()
+                $("#identifier-count").html("<strong>Identifiers:</strong> " + Object
+                    .values(identifiers).length +
+                    " for this pathway and organism")
+                $("#identifier-table").html("")
+                $("#identifier-table").append(
+                    "<thead><th>Identifier</th><th>Type</th></thead>")
+                for (pb in identifiers) {
+                    var identifier = identifiers[pb].identifier
+                    var type = identifiers[pb]["type"] == "trans" ? "R" : "M";
+                    identifier.forEach(ident => {
+                        var cl = ""
+                        if (ident.putative == "1" || ident.putative == true) {
+                            cl =
+                                "class='putative' title='putative'"
+                        }
+                        var value = type == "M" ? ident.tag : ident.value
+                        $("#identifier-table").append("<tr data='" + pb + "'><td " + cl + ">" +
+                            value + "</td><td>" +
+                            type + " " + identifierIdentification(type == "M" ?
+                                ident.info : value, type) +
+                            "</td></tr>")
+                    });
+                    if (svg.selectAll("g.plot-boxes#pb" + pb + " rect.pb-temp")
+                        .node() === null) {
+                        // prevent multiple calls on same blot-box
+                        svg.selectAll("g.plot-boxes#pb" + pb)
+                            .append("rect").classed("pb-temp", true)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .attr("width", width)
+                            .attr("height", height)
+                            .style("fill", "#eee")
+                            .style("stroke", "#000064").style("stroke-dasharray", type ==
+                                "M" ?
+                                "3,3" : "none")
+                            .on("mouseenter", function () {
+                                d3.select(this).style("fill", "#000064")
+                                var ident = d3.select(this.parentElement).attr("id")
+                                    .replace(
+                                        "pb", "")
+                                $("#identifier-table tr[data='" + ident + "']")
+                                    .addClass(
+                                        "highlight")
+                                $('#identifier-list').scrollTop($(
+                                    "#identifier-table tr[data='" +
+                                    ident + "']").position().top)
+                            })
+                            .on("mouseout", function () {
+                                d3.select(this).style("fill", "#eee")
+                                var ident = d3.select(this.parentElement).attr("id")
+                                    .replace(
+                                        "pb", "")
+                                $("#identifier-table tr[data='" + ident + "']")
+                                    .removeClass(
+                                        "highlight")
+                            })
+                    }
+                }
+                $("#identifier-table tr").on("mouseenter", function () {
+                    $(this).addClass("highlight")
+                    var ident = "g#pb" + $(this).attr("data")
+                    svg.select(ident).select("rect").style("fill", "#000064")
+                }).on("mouseout", function () {
+                    $(this).removeClass("highlight")
+                    var ident = "g#pb" + $(this).attr("data")
+                    svg.select(ident).select("rect").style("fill", "#eee")
+                })
+
+            })
+
+        })
+
+    </script>
+</body>
+
+</html>

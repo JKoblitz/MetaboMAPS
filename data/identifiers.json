@@ -1,0 +1,257 @@
+{
+    "4707": {
+        "identifier": [
+            {
+                "value": "915",
+                "tag": "citrate",
+                "putative": "0",
+                "info": "B:125,M:CIT,K:C00158,S:1952",
+                "org": 0
+            }
+        ],
+        "type": "met"
+    },
+    "4708": {
+        "identifier": [
+            {
+                "value": "1597",
+                "tag": "isocitrate",
+                "putative": "0",
+                "info": "B:242,M:THREO-DS-ISO-CITRATE,K:C00451,S:2013",
+                "org": 0
+            }
+        ],
+        "type": "met"
+    },
+    "4709": {
+        "identifier": [
+            {
+                "value": "3064",
+                "tag": "2-oxoglutarate",
+                "putative": "0",
+                "info": "B:32,M:2-KETOGLUTARATE,K:C00026,S:1922",
+                "org": 0
+            }
+        ],
+        "type": "met"
+    },
+    "4710": {
+        "identifier": [
+            {
+                "value": "1071",
+                "tag": "succinyl-CoA",
+                "putative": "0",
+                "info": "B:198,M:SUC-COA,K:C00091,S:1931",
+                "org": 0
+            }
+        ],
+        "type": "met"
+    },
+    "4711": {
+        "identifier": [
+            {
+                "value": "396",
+                "tag": "succinate",
+                "putative": "0",
+                "info": "B:54,M:SUC,K:C02028,S:1924",
+                "org": 0
+            }
+        ],
+        "type": "met"
+    },
+    "4712": {
+        "identifier": [
+            {
+                "value": "2638",
+                "tag": "fumarate",
+                "putative": "0",
+                "info": "B:156,M:FUM,K:C00122,S:1910",
+                "org": 0
+            }
+        ],
+        "type": "met"
+    },
+    "4713": {
+        "identifier": [
+            {
+                "value": "760",
+                "tag": "(S)-malate",
+                "putative": "0",
+                "info": "B:180,M:MAL,K:C00149,S:1918",
+                "org": 0
+            }
+        ],
+        "type": "met"
+    },
+    "4714": {
+        "identifier": [
+            {
+                "value": "484",
+                "tag": "oxaloacetate",
+                "putative": "0",
+                "info": "B:53,M:OXALACETIC_ACID,K:C00036,S:1915",
+                "org": 0
+            }
+        ],
+        "type": "met"
+    },
+    "4715": {
+        "identifier": [
+            {
+                "value": "4880",
+                "tag": "acetyl-CoA",
+                "putative": "0",
+                "info": "B:27,M:ACETYL-COA,K:C00024,S:1276",
+                "org": 0
+            }
+        ],
+        "type": "met"
+    },
+    "4716": {
+        "identifier": [
+            {
+                "value": "3770",
+                "tag": "CoA",
+                "putative": "0",
+                "info": "B:10,M:CO-A,K:C00010,S:1265",
+                "org": 0
+            }
+        ],
+        "type": "met"
+    },
+    "4717": {
+        "identifier": [
+            {
+                "value": "1.1.1.37",
+                "tag": "1.1.1.37 (malate dehydrogenase)",
+                "putative": "0",
+                "org": 0
+            }
+        ],
+        "type": "trans"
+    },
+    "4718": {
+        "identifier": [
+            {
+                "value": "4.2.1.2",
+                "tag": "4.2.1.2 (fumarate hydratase)",
+                "putative": "0",
+                "org": 0
+            }
+        ],
+        "type": "trans"
+    },
+    "4719": {
+        "identifier": [
+            {
+                "value": "1.3.5.1",
+                "tag": "1.3.5.1 (succinate dehydrogenase)",
+                "putative": "0",
+                "org": 0
+            }
+        ],
+        "type": "trans"
+    },
+    "4720": {
+        "identifier": [
+            {
+                "value": "6.2.1.5",
+                "tag": "6.2.1.5 (succinate-CoA ligase (ADP-forming))",
+                "putative": "0",
+                "org": 0
+            }
+        ],
+        "type": "trans"
+    },
+    "4721": {
+        "identifier": [
+            {
+                "value": "1.2.7.11",
+                "tag": "1.2.7.11 (2-oxoacid oxidoreductase (ferredoxin))",
+                "putative": "0",
+                "org": 0
+            },
+            {
+                "value": "1.2.4.2",
+                "tag": "1.2.4.2 (oxoglutarate dehydrogenase (succinyl-transferring))",
+                "putative": "0",
+                "org": 0
+            },
+            {
+                "value": "1.8.1.4",
+                "tag": "1.8.1.4 (dihydrolipoyl dehydrogenase)",
+                "putative": "0",
+                "org": 0
+            },
+            {
+                "value": "2.3.1.61",
+                "tag": "2.3.1.61 (dihydrolipoyllysine-residue succinyltransferase)",
+                "putative": "0",
+                "org": 0
+            }
+        ],
+        "type": "trans"
+    },
+    "4722": {
+        "identifier": [
+            {
+                "value": "1.1.1.286",
+                "tag": "1.1.1.286 (isocitrate-homoisocitrate dehydrogenase)",
+                "putative": "0",
+                "org": 0
+            }
+        ],
+        "type": "trans"
+    },
+    "4723": {
+        "identifier": [
+            {
+                "value": "4.2.1.3",
+                "tag": "4.2.1.3 (aconitate hydratase)",
+                "putative": "0",
+                "org": 0
+            }
+        ],
+        "type": "trans"
+    },
+    "4724": {
+        "identifier": [
+            {
+                "value": "2.3.3.1",
+                "tag": "2.3.3.1 (citrate (Si)-synthase)",
+                "putative": "0",
+                "org": 0
+            }
+        ],
+        "type": "trans"
+    },
+    "4725": {
+        "identifier": [
+            {
+                "value": "5001",
+                "tag": "CO2",
+                "putative": "0",
+                "info": "B:17,M:CARBON-DIOXIDE,K:C00011,S:1266",
+                "org": 0
+            }
+        ],
+        "type": "met"
+    },
+    "4975": {
+        "identifier": [
+            {
+                "value": "1.2.7.1",
+                "tag": "1.2.7.1 (pyruvate synthase)",
+                "putative": "0",
+                "org": 0
+            },
+            {
+                "value": "PYRE",
+                "tag": "PYRE",
+                "putative": "1",
+                "org": 0
+            }
+        ],
+        "type": "trans"
+    }
+}

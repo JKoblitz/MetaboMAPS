@@ -1,0 +1,12 @@
+metabolome;t0_pyruvate;t0_alanine;t0_glutamate;t1_pyruvate;t1_alanine;t1_glutamate
+citrate;100;80;100;80;100;80
+isocitrate;29;33;37;17;96;19
+2-oxoglutarate;72;71;56;78;26;18
+succinyl-coa;7;79;;53;22;62
+succinate;27;70;92;68;14;13
+fumarate;96;46;22;75;78;44
+succinate;96;46;22;75;78;44
+malate;79;20;;91;36;87
+oxaloacetate;33;21;24;91;78;26
+acetyl-coa;6;66;37;88;88;56
+coenzyme_a;69;92;43;91;4;84

@@ -1,0 +1,252 @@
+object {
+    display: block;
+    width: 100%;
+}
+
+body {
+    overflow: hidden;
+}
+
+#maps-interface {
+    overflow: auto;
+}
+
+#identifier-div {
+    position: absolute;
+    right: 0;
+    top: 110px;
+    height: 100%;
+    width: 0;
+    background-color: rgba(250, 250, 250, .85);
+    border: 1px solid #000064;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    padding: 0.5rem;
+    z-index: 100;
+}
+
+#identifier-div h4 {
+    margin-top: -30px;
+}
+
+#identifier-list {
+    height: 80%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+#identifier-btn {
+    position: relative;
+    top: 50%;
+    left: -42px;
+    background-color: rgb(250, 250, 250);
+    border: 1px solid #000064;
+    border-right: none;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    padding: 0.5rem 0.25rem;
+}
+
+#identifier-table {
+    table-layout: fixed;
+}
+
+#identifier-table td {
+    cursor: pointer;
+}
+
+#identifier-table tr.highlight {
+    background-color: #aaaadd;
+}
+
+a.icon {
+    font-family: Consolas, "Courier New", monospace;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: small;
+    vertical-align: middle;
+    display: inline-flex;
+    cursor: pointer;
+    color: white;
+    margin-left: 2px;
+}
+
+a.icon-B {
+    background-color: #000064;
+}
+
+a.icon-K {
+    background-color: #ffd600;
+}
+
+a.icon-M {
+    background-color: #6fa84d;
+}
+
+a.icon-S {
+    background-color: #2882d8;
+}
+
+a.icon-U {
+    background-color: #c39b00;
+}
+
+.putative::before {
+    content: '!';
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+    background-color: #bf1d3d;
+    padding: 0 0.3em;
+    border-radius: 1em;
+    position: relative;
+    z-index: 30;
+    right: 5px;
+    bottom: 0px;
+    margin-left: 5px;
+}
+
+.amsify-suggestags-area .amsify-suggestags-input-area {
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    min-height: 20px;
+    padding: 8px 5px;
+}
+
+.amsify-suggestags-area .amsify-suggestags-input-area {
+    text-align: left;
+    height: auto;
+}
+
+.amsify-suggestags-area .amsify-suggestags-input-area:hover {
+    cursor: text;
+}
+
+.amsify-suggestags-area .amsify-suggestags-input-area .amsify-suggestags-input {
+    width: 100%;
+    /* max-width: 200px; */
+    padding: 0px 4px;
+    border: 0;
+}
+
+.amsify-suggestags-area .amsify-suggestags-input-area .amsify-suggestags-input:focus {
+    outline: 0;
+}
+
+.amsify-focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.amsify-focus-light {
+    border-color: #cacaca;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(189, 189, 189, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(189, 189, 189, 0.6);
+}
+
+.amsify-suggestags-area .amsify-suggestags-label {
+    cursor: pointer;
+    min-height: 20px;
+}
+
+.amsify-toggle-suggestags {
+    float: right;
+    cursor: pointer;
+}
+
+.amsify-suggestags-area .amsify-suggestags-list {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #dedede;
+    z-index: 1;
+}
+
+.amsify-suggestags-area .amsify-suggestags-list ul.amsify-list {
+    list-style: none;
+    padding: 3px 0px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.amsify-suggestags-area .amsify-suggestags-list ul.amsify-list li.amsify-list-item {
+    text-align: left;
+    cursor: pointer;
+    padding: 0px 10px;
+}
+
+.amsify-suggestags-area .amsify-suggestags-list ul.amsify-list li.amsify-list-item:active {
+    background: #717171;
+    color: white;
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
+}
+
+.amsify-suggestags-area .amsify-suggestags-list ul.amsify-list li.amsify-list-group {
+    text-align: left;
+    padding: 0px 10px;
+    font-weight: bold;
+}
+
+.amsify-suggestags-area .amsify-suggestags-list ul.amsify-list li.amsify-item-pad {
+    padding-left: 30px;
+}
+
+.amsify-suggestags-area .amsify-suggestags-list ul.amsify-list li.amsify-item-noresult {
+    display: none;
+    color: #ff6060;
+    font-weight: bold;
+    text-align: center;
+}
+
+.amsify-suggestags-area .amsify-suggestags-list .amsify-select-input {
+    display: none;
+}
+
+.amsify-suggestags-area .amsify-suggestags-list ul.amsify-list li.active {
+    background: #d9d8d8;
+}
+
+.amsify-suggestags-area .amsify-suggestags-list ul.amsify-list li.amsify-item-pad.active {
+    font-weight: normal;
+}
+
+.amsify-suggestags-input-area .amsify-select-tag {
+    padding: 2px 7px;
+    margin: 0px 4px 1px 0px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.amsify-suggestags-input-area .amsify-select-tag.col-bg {
+    background: #d8d8d8;
+    color: black;
+}
+
+.amsify-suggestags-input-area .disabled.amsify-select-tag {
+    background: #eaeaea;
+    color: #b9b9b9;
+    pointer-events: none;
+}
+
+.amsify-suggestags-input-area .flash.amsify-select-tag {
+    background-color: #f57f7f;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+}
+
+.amsify-suggestags-input-area .amsify-remove-tag {
+    cursor: pointer;
+}
+
+.amsify-no-suggestion {
+    display: none;
+    opacity: 0.7;
+}
